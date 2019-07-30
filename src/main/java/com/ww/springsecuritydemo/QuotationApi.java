@@ -32,7 +32,8 @@ public class QuotationApi {
     }
 
     @DeleteMapping("/api")
-    public void deleteQuotation(@RequestParam int index) {
+    public String deleteQuotation(@RequestParam int index) {
         quotations.remove(index);
+        return "Removed quotation with index:" + index;
     }
 }
